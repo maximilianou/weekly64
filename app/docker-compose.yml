@@ -1,0 +1,42 @@
+version: '3.7'
+services:
+  front_srv: 
+    container_name: front_srv 
+    hostname: frontend
+    image: mcr.microsoft.com/dotnet/sdk:5.0
+    command: 
+      - dotnet
+      - run
+      - --no-launch-profile
+      - --project 
+      - /app
+    volumes:
+      - './app3:/app'
+    ports:
+      - '8030:80'
+    environment:
+      - ASPNETCORE_URLS=http://+:80 
+      - ASPNETCORE_ENVIRONMENT=Development     
+    networks:
+      - net_intranet
+  back_srv: 
+    container_name: back_srv 
+    hostname: backtend
+    image: mcr.microsoft.com/dotnet/sdk:5.0
+    command: 
+      - dotnet
+      - run
+      - --no-launch-profile
+      - --project 
+      - /app
+    volumes:
+      - './app2:/app'
+    ports:
+      - '8020:80'
+    environment:
+      - ASPNETCORE_URLS=http://+:80 
+      - ASPNETCORE_ENVIRONMENT=Development     
+    networks:
+      - net_intranet
+networks:
+  net_intranet: 

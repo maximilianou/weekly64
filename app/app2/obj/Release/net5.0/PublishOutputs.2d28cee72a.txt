@@ -1,0 +1,11 @@
+/app/out/app
+/app/out/appsettings.Development.json
+/app/out/appsettings.json
+/app/out/app.dll
+/app/out/app.deps.json
+/app/out/app.runtimeconfig.json
+/app/out/app.pdb
+/app/out/Microsoft.OpenApi.dll
+/app/out/Swashbuckle.AspNetCore.Swagger.dll
+/app/out/Swashbuckle.AspNetCore.SwaggerGen.dll
+/app/out/Swashbuckle.AspNetCore.SwaggerUI.dll
