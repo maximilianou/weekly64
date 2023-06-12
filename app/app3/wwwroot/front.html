@@ -2,4 +2,25 @@
 <html>
     <head><title>Reggio</title></head>
     <body>Reggio</body>
+
+    <script>
+    const frontGet = async ( contentOut ) => {
+        //fetch( 'http://backend:8020/WeatherForecast' )
+      let res = await fetch( 'http://localhost:8020/WeatherForecast' );
+        let resJson = await res.json();
+        console.log(resJson);
+        contentOut.innerHTML = JSON.stringify(resJson);
+    }
+    const getFrontGet = async (  output ) => {
+      await frontGet( output );
+    }
+    </script>
+
+
+
+<div onclick="getFrontGet( document.querySelector('#frontGetContent') )">click GET!</div>
+<div onclick="frontGet( document.querySelector('#frontGetContent') )">click GET!</div>
+    
+    <div id="frontGetContent">vuoto</div>
+    
 </html>

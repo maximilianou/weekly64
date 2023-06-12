@@ -1,9 +1,10 @@
 version: '3.7'
 services:
-  front_srv: 
-    container_name: front_srv 
+  frontend: 
+    container_name: frontend 
     hostname: frontend
     image: mcr.microsoft.com/dotnet/sdk:5.0
+#    image: mcr.microsoft.com/dotnet/framework/sdk:4.8.1    
     command: 
       - dotnet
       - run
@@ -19,10 +20,11 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development     
     networks:
       - net_intranet
-  back_srv: 
-    container_name: back_srv 
+  backend: 
+    container_name: backend 
     hostname: backtend
     image: mcr.microsoft.com/dotnet/sdk:5.0
+#    image: mcr.microsoft.com/dotnet/framework/sdk:4.8.1    
     command: 
       - dotnet
       - run

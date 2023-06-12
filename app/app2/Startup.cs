@@ -42,6 +42,15 @@ namespace app
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "app v1"));
+
+              app.UseCors(
+                policy =>
+                      {
+                            policy.AllowAnyOrigin(
+                            ).AllowAnyHeader(
+                            ).AllowAnyMethod();
+                      }
+              );
             }
 
             app.UseHttpsRedirection();
@@ -49,6 +58,7 @@ namespace app
             app.UseRouting();
 
             app.UseAuthorization();
+
 
             app.UseEndpoints(endpoints =>
             {
